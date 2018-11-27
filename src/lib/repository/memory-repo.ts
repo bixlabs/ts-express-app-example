@@ -28,6 +28,10 @@ export class MemoryRepo {
     }
 
     public async findById(id: number): Promise<any> {
+        if (typeof id === "undefined" || id === null) {
+            throw new Error("there's no id property present and it's mandatory");
+        }
+
         const existentData = this.data[id];
         if (!existentData) {
             throw new Error(`there's no data by id: ${id}`);
