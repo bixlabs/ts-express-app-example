@@ -1,13 +1,13 @@
 import {ISurvey} from "../../entity/survey/models";
 import {ISurveyRepository} from "../../entity/survey/repository";
-import {CreateSurvey} from "./create-survey";
+import {NewSurvey} from "./new-survey";
 
-export class CreateEmptySurvey {
+export class NewEmptySurvey {
     constructor(private repo: ISurveyRepository) {
     }
 
     public async execute(name: string): Promise<ISurvey> {
-        const createSurvey = new CreateSurvey(this.repo);
+        const createSurvey = new NewSurvey(this.repo);
         return createSurvey.execute({name, questions: []});
     }
 }

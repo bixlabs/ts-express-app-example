@@ -1,4 +1,4 @@
-import {IQuestionInput, ISurvey, ISurveyInput, ISurveyQuestion} from "./models";
+import {IQuestion, IQuestionInput, ISurvey, ISurveyInput} from "./models";
 
 export interface ISurveyRepository {
     create(survey: ISurveyInput): Promise<ISurvey>;
@@ -8,10 +8,10 @@ export interface ISurveyRepository {
     findById(id: number): Promise<ISurvey>;
 }
 
-export interface ISurveyQuestionRepository {
-    create(question: IQuestionInput): Promise<ISurveyQuestion>;
+export interface IQuestionRepository {
+    create(question: IQuestionInput): Promise<IQuestion>;
 
-    update(id: number, question: IQuestionInput): Promise<ISurveyQuestion>;
+    update(id: number, question: IQuestionInput): Promise<IQuestion>;
 
-    findById(id: number): Promise<ISurveyQuestion>;
+    findById(id: number): Promise<IQuestion>;
 }

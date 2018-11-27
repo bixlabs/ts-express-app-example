@@ -1,18 +1,18 @@
-import {ISurveyQuestionRepository, ISurveyRepository} from "../../entity/survey/repository";
+import {QuestionType} from "../../entity/survey/models";
+import {IQuestionRepository, ISurveyRepository} from "../../entity/survey/repository";
 import {MemoryRepo} from "../../lib/repository/memory-repo";
 import {AddQuestion} from "./add-question";
-import {QuestionType} from "../../entity/survey/models";
-import {CreateSurvey} from "./create-survey";
+import {NewSurvey} from "./new-survey";
 import {UpdateQuestion} from "./update-question";
 
 let surveyRepo: ISurveyRepository;
-let questionRepo: ISurveyQuestionRepository;
+let questionRepo: IQuestionRepository;
 
 beforeEach(async () => {
     surveyRepo = new MemoryRepo();
     questionRepo = new MemoryRepo();
 
-    await (new CreateSurvey(surveyRepo)).execute({name: "Sample", questions: []});
+    await (new NewSurvey(surveyRepo)).execute({name: "Sample", questions: []});
     const interactor = new AddQuestion(surveyRepo, questionRepo);
     await interactor.execute(1, {title: "How are you?", type: QuestionType.Simple});
 });

@@ -1,10 +1,10 @@
 import {QuestionType} from "../../entity/survey/models";
-import {ISurveyQuestionRepository, ISurveyRepository} from "../../entity/survey/repository";
+import {IQuestionRepository, ISurveyRepository} from "../../entity/survey/repository";
 import {MemoryRepo} from "../../lib/repository/memory-repo";
 import {AddQuestion} from "./add-question";
 
 let surveyRepo: ISurveyRepository;
-let questionRepo: ISurveyQuestionRepository;
+let questionRepo: IQuestionRepository;
 
 beforeEach(async () => {
     surveyRepo = new MemoryRepo();
@@ -35,7 +35,7 @@ test("Allow add more than one question", async () => {
 
     const survey = await surveyRepo.findById(1);
     expect(survey.questions).toHaveLength(3);
-    const [_, question] = survey.questions;
+    const [, question] = survey.questions;
     expect(question.id).toBe(2);
     expect(question.title).toBe("How is your day?");
 });

@@ -1,7 +1,7 @@
 import {ISurvey, ISurveyInput} from "../../entity/survey/models";
 import {ISurveyRepository} from "../../entity/survey/repository";
 
-export class CreateSurvey {
+export class NewSurvey {
     constructor(private repo: ISurveyRepository) {
     }
 

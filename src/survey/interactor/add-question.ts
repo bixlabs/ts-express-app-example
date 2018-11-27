@@ -1,8 +1,8 @@
 import {IQuestionInput, ISurvey} from "../../entity/survey/models";
-import {ISurveyQuestionRepository, ISurveyRepository} from "../../entity/survey/repository";
+import {IQuestionRepository, ISurveyRepository} from "../../entity/survey/repository";
 
 export class AddQuestion {
-    constructor(private surveyR: ISurveyRepository, private questionR: ISurveyQuestionRepository) {
+    constructor(private surveyR: ISurveyRepository, private questionR: IQuestionRepository) {
     }
 
     public async execute(id: number, data: IQuestionInput): Promise<ISurvey> {

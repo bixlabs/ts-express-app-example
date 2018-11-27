@@ -1,12 +1,12 @@
-import {ISurveyQuestionRepository, ISurveyRepository} from "../../entity/survey/repository";
-import {ISurvey, ISurveyQuestion} from "../../entity/survey/models";
+import {IQuestion, ISurvey} from "../../entity/survey/models";
+import {IQuestionRepository, ISurveyRepository} from "../../entity/survey/repository";
 
 export class UpdateQuestion {
-    constructor(private surveyR: ISurveyRepository, private questionR: ISurveyQuestionRepository) {
+    constructor(private surveyR: ISurveyRepository, private questionR: IQuestionRepository) {
 
     }
 
-    public async execute(id: number, data: ISurveyQuestion): Promise<ISurvey> {
+    public async execute(id: number, data: IQuestion): Promise<ISurvey> {
         const survey = await this.surveyR.findById(id);
         const question = await this.questionR.findById(data.id);
         const questionIndex = survey.questions.findIndex((surveyQuestion) => question.id === surveyQuestion.id);

@@ -2,13 +2,13 @@
 export interface ISurveyInput {
     id?: number;
     name: string;
-    questions: ISurveyQuestion[];
+    questions: IQuestion[];
 }
 
 export interface ISurvey {
     id: number;
     name: string;
-    questions: ISurveyQuestion[];
+    questions: IQuestion[];
 }
 
 export enum QuestionType {
@@ -22,7 +22,7 @@ export interface IQuestionInput {
     type: QuestionType;
 }
 
-export interface ISurveyQuestion {
+export interface IQuestion {
     id: number;
     title: string;
     type: QuestionType;
