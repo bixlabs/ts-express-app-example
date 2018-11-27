@@ -2,7 +2,8 @@ module.exports = {
     clearMocks: true,
     collectCoverage: true,
     collectCoverageFrom: [
-        "src/**/*"
+        "src/**/*",
+        "!src/app/*"
     ],
     coverageDirectory: 'coverage',
     globals: {
