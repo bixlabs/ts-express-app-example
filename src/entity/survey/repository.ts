@@ -10,4 +10,8 @@ export interface ISurveyRepository {
 
 export interface ISurveyQuestionRepository {
     create(question: IQuestionInput): Promise<ISurveyQuestion>;
+
+    update(id: number, question: IQuestionInput): Promise<ISurveyQuestion>;
+
+    findById(id: number): Promise<ISurveyQuestion>;
 }

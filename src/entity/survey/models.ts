@@ -17,13 +17,13 @@ export enum QuestionType {
 }
 
 export interface IQuestionInput {
-    id?: string;
+    id?: number;
     title: string;
     type: QuestionType;
 }
 
 export interface ISurveyQuestion {
-    id: string;
+    id: number;
     title: string;
     type: QuestionType;
 }
