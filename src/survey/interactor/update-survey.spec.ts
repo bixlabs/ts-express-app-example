@@ -1,10 +1,10 @@
-import {FakeRepo} from "../repository/fake-repo";
+import {MemoryRepo} from "../../lib/repository/memory-repo";
 import {UpdateSurvey} from "./update-survey";
 
-let repo: FakeRepo;
+let repo: MemoryRepo;
 
 beforeAll(async () => {
-    repo = new FakeRepo();
+    repo = new MemoryRepo();
     await repo.create({name: "Sample", questions: []});
 });
 
