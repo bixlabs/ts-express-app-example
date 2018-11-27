@@ -1,5 +1,5 @@
-import {ISurvey} from "../../entity/survey/models";
-import {ISurveyRepository} from "../../entity/survey/repository";
+import {ISurvey} from "../model/survey";
+import {ISurveyRepository} from "../repository/survey-repository";
 import {NewSurvey} from "./new-survey";
 
 export class NewEmptySurvey {

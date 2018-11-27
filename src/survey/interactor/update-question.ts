@@ -1,5 +1,7 @@
-import {IQuestion, ISurvey} from "../../entity/survey/models";
-import {IQuestionRepository, ISurveyRepository} from "../../entity/survey/repository";
+import {ISurvey} from "../model/survey";
+import {IQuestion} from "../model/survey";
+import {IQuestionRepository} from "../repository/question-repository";
+import {ISurveyRepository} from "../repository/survey-repository";
 
 export class UpdateQuestion {
     constructor(private surveyR: ISurveyRepository, private questionR: IQuestionRepository) {

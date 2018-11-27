@@ -1,6 +1,7 @@
-import {QuestionType} from "../../entity/survey/models";
-import {IQuestionRepository, ISurveyRepository} from "../../entity/survey/repository";
 import {MemoryRepo} from "../../lib/repository/memory-repo";
+import {QuestionType} from "../model/survey";
+import {IQuestionRepository} from "../repository/question-repository";
+import {ISurveyRepository} from "../repository/survey-repository";
 import {AddQuestion} from "./add-question";
 
 let surveyRepo: ISurveyRepository;
