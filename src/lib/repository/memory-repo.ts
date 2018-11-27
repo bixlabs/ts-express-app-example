@@ -15,13 +15,24 @@ export class MemoryRepo {
     }
 
     public async update(id: number, data: any): Promise<any> {
+        const existentData = await this.findById(id);
+
+        this.data[id] = Object.assign(existentData, data, {id});
+
+        return this.data[id];
+    }
+
+    public async delete(id: number): Promise<void> {
+        await this.findById(id);
+        delete this.data[id];
+    }
+
+    public async findById(id: number): Promise<any> {
         const existentData = this.data[id];
         if (!existentData) {
             throw new Error(`there's no data by id: ${id}`);
         }
 
-        this.data[id] = Object.assign(this.data[id], data, {id});
-
-        return this.data[id];
+        return existentData;
     }
 }

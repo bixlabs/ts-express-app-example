@@ -34,3 +34,16 @@ test("Cannot update not existent data", async () => {
     };
     expect(check()).rejects.toEqual(new Error("there's no data by id: 1"));
 });
+
+test("Allow delete data by id", async () => {
+    const repo = new MemoryRepo();
+    const value1 = await repo.create({name: "Hello"});
+    const value2 = await repo.create({name: "World"});
+    expect(value1.id).toBe(1);
+    expect(value2.id).toBe(2);
+    await repo.delete(1);
+    const check = async () => {
+        await repo.findById(1);
+    };
+    expect(check()).rejects.toEqual(new Error("there's no data by id: 1"));
+});
