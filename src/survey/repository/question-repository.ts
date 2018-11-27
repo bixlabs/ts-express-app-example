@@ -1,8 +1,8 @@
-import {IQuestionRequest} from "../interactor/model";
+import {INewQuestionRequest, IQuestionRequest} from "../interactor/interactor-requests";
 import {IQuestion} from "../model/survey";
 
 export interface IQuestionRepository {
-    create(question: IQuestionRequest): Promise<IQuestion>;
+    create(question: INewQuestionRequest): Promise<IQuestion>;
 
     update(id: number, question: IQuestionRequest): Promise<IQuestion>;
 

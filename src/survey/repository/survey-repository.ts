@@ -1,8 +1,8 @@
-import {ISurveyRequest} from "../interactor/model";
+import {INewSurveyRequest, ISurveyRequest} from "../interactor/interactor-requests";
 import {ISurvey} from "../model/survey";
 
 export interface ISurveyRepository {
-    create(survey: ISurveyRequest): Promise<ISurvey>;
+    create(survey: INewSurveyRequest): Promise<ISurvey>;
 
     update(id: number, survey: ISurveyRequest): Promise<ISurvey>;
 

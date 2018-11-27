@@ -10,7 +10,7 @@ beforeAll(async () => {
 
 test("Allow update survey using its id", async () => {
     const interactor = new UpdateSurvey(repo);
-    const updatedSurvey = await interactor.execute(1, {name: "Updated", questions: []});
+    const updatedSurvey = await interactor.execute({id: 1, name: "Updated", questions: []});
     expect(updatedSurvey.id).toBe(1);
     expect(updatedSurvey.name).toBe("Updated");
 });
