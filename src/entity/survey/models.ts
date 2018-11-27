@@ -16,8 +16,14 @@ export enum QuestionType {
     Text = 1,
 }
 
-export interface ISurveyQuestion {
+export interface IQuestionInput {
     id?: string;
+    title: string;
+    type: QuestionType;
+}
+
+export interface ISurveyQuestion {
+    id: string;
     title: string;
     type: QuestionType;
 }
