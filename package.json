@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "tslint -c tslint.json -p tsconfig.json --fix",
+    "lint_fix": "npm run lint -- --fix",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
     "build": "tsc",
+    "prebuild": "npm run lint",
     "test": "jest",
     "pretest": "npm run lint"
   },
@@ -14,6 +16,7 @@
   "devDependencies": {
     "@types/jest": "^23.3.9",
     "@types/node": "^10.12.10",
+    "husky": "^1.2.0",
     "jest": "^23.6.0",
     "ts-jest": "^23.10.5",
     "ts-node": "^7.0.1",
