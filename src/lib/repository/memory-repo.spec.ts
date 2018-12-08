@@ -27,12 +27,12 @@ test("Allow update previously created data", async () => {
     expect(updatedValue2.name).toBe("Cookie");
 });
 
-test("Cannot update not existent data", async () => {
+test("Cannot update non existent data", async () => {
     const repo = new MemoryRepo();
     const check = async () => {
         await repo.update(1, {});
     };
-    expect(check()).rejects.toEqual(new Error("there's no data by id: 1"));
+    await expect(check()).rejects.toEqual(new Error("there's no data by id: 1"));
 });
 
 test("Allow delete data by id", async () => {
@@ -45,5 +45,5 @@ test("Allow delete data by id", async () => {
     const check = async () => {
         await repo.findById(1);
     };
-    expect(check()).rejects.toEqual(new Error("there's no data by id: 1"));
+    await expect(check()).rejects.toEqual(new Error("there's no data by id: 1"));
 });
