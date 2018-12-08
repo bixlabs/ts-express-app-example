@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey sample</title>
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+    <style>
+        .header-pattern {
+            height: 200px;
+            background-clip: border-box;
+            background-image: url("pattern.png");
+            background-repeat: repeat;
+        }
+    </style>
+</head>
+<body>
+<div class="mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+        <!--TODO: Encuentra una alternativa al offset-->
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3"></div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
+            <div class="mdc-card">
+                <div class="mdc-card__media mdc-card__media--square">
+                    <div class="mdc-card__media-content">
+                        <div class="header-pattern"></div>
+                    </div>
+                </div>
+
+                <!-- ... content ... -->
+
+
+                <div class="mdc-card__actions">
+                    <div class="mdc-card__action-buttons">
+                        <button class="mdc-button mdc-button--outlined mdc-card__action mdc-card__action--button">
+                            <i class="material-icons mdc-button__icon" aria-hidden="true">send</i>
+                            Completar
+                        </button>
+                    </div>
+
+
+                    <!--<div class="mdc-card__action-icons">-->
+                        <!--<button class="material-icons mdc-icon-button mdc-card__action mdc-card__action&#45;&#45;icon"-->
+                                <!--title="Share">-->
+                            <!--share-->
+                        <!--</button>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // .mdc-button
+    mdc.ripple.MDCRipple.attachTo(document.querySelector('.mdc-button'));
+
+    // .mdc-icon-button
+    const iconRipple = mdc.ripple.MDCRipple.attachTo(document.querySelector('.mdc-icon-button'));
+    iconRipple.unbounded = true;
+</script>
+</body>
+</html>
