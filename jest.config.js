@@ -3,7 +3,7 @@ module.exports = {
     collectCoverage: true,
     collectCoverageFrom: [
         "src/**/*",
-        "!src/app/*"
+        "!src/api/*"
     ],
     coverageDirectory: 'coverage',
     globals: {
