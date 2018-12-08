@@ -1,11 +1,11 @@
 import {MemoryRepo} from "../../lib/repository/memory-repo";
 import {QuestionType} from "../model/survey";
-import {IQuestionRepository} from "../repository/question-repository";
-import {ISurveyRepository} from "../repository/survey-repository";
+import {QuestionRepository} from "../repository/question-repository";
+import {SurveyRepository} from "../repository/survey-repository";
 import {AddQuestion} from "./add-question";
 
-let surveyRepo: ISurveyRepository;
-let questionRepo: IQuestionRepository;
+let surveyRepo: SurveyRepository;
+let questionRepo: QuestionRepository;
 
 beforeEach(async () => {
     surveyRepo = new MemoryRepo();

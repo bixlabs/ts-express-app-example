@@ -1,12 +1,12 @@
-import {ISurvey} from "../model/survey";
-import {ISurveyRepository} from "../repository/survey-repository";
-import {ISurveyRequest} from "./interactor-requests";
+import {Survey} from "../model/survey";
+import {SurveyRepository} from "../repository/survey-repository";
+import {SurveyRequest} from "./interactor-requests";
 
 export class UpdateSurvey {
-    constructor(private repo: ISurveyRepository) {
+    constructor(private repo: SurveyRepository) {
     }
 
-    public async execute(survey: ISurveyRequest): Promise<ISurvey> {
+    public async execute(survey: SurveyRequest): Promise<Survey> {
         return this.repo.update(survey.id, survey);
     }
 }

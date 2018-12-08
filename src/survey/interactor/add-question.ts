@@ -1,13 +1,13 @@
-import {ISurvey} from "../model/survey";
-import {IQuestionRepository} from "../repository/question-repository";
-import {ISurveyRepository} from "../repository/survey-repository";
-import {INewQuestionRequest} from "./interactor-requests";
+import {Survey} from "../model/survey";
+import {QuestionRepository} from "../repository/question-repository";
+import {SurveyRepository} from "../repository/survey-repository";
+import {NewQuestionRequest} from "./interactor-requests";
 
 export class AddQuestion {
-    constructor(private surveyR: ISurveyRepository, private questionR: IQuestionRepository) {
+    constructor(private surveyR: SurveyRepository, private questionR: QuestionRepository) {
     }
 
-    public async execute(id: number, data: INewQuestionRequest): Promise<ISurvey> {
+    public async execute(id: number, data: NewQuestionRequest): Promise<Survey> {
         const survey = await this.surveyR.findById(id);
         const question = await this.questionR.create(data);
         survey.questions.push(question);

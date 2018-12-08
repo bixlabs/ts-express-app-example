@@ -1,5 +1,5 @@
 import {MemoryRepo} from "../../lib/repository/memory-repo";
-import {ISurveyRequest} from "./interactor-requests";
+import {SurveyRequest} from "./interactor-requests";
 import {UpdateSurvey} from "./update-survey";
 
 let repo: MemoryRepo;
@@ -16,7 +16,7 @@ test("Allow update survey using its id", async () => {
     expect(updatedSurvey.name).toBe("Updated");
 });
 
-type Data = any | ISurveyRequest;
+type Data = any | SurveyRequest;
 
 test("Doesn't allow update when id is null or undefined", async () => {
     const data: Data = {name: "Updated", questions: []};

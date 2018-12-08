@@ -1,7 +1,7 @@
-export interface ISurvey {
+export interface Survey {
     id: number;
     name: string;
-    questions: IQuestion[];
+    questions: Question[];
 }
 
 export enum QuestionType {
@@ -9,7 +9,7 @@ export enum QuestionType {
     Text = 1,
 }
 
-export interface IQuestion {
+export interface Question {
     id: number;
     title: string;
     type: QuestionType;

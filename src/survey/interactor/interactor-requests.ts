@@ -1,23 +1,23 @@
 import {QuestionType} from "../model/survey";
 
-export interface ISurveyRequest {
+export interface SurveyRequest {
     id: number;
     name?: string;
-    questions?: IQuestionRequest[];
+    questions?: QuestionRequest[];
 }
 
-export interface INewSurveyRequest {
+export interface NewSurveyRequest {
     name: string;
-    questions: IQuestionRequest[];
+    questions: QuestionRequest[];
 }
 
-export interface IQuestionRequest {
+export interface QuestionRequest {
     id: number;
     title?: string;
     type?: QuestionType;
 }
 
-export interface INewQuestionRequest {
+export interface NewQuestionRequest {
     title: string;
     type: QuestionType;
 }
