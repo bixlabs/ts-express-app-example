@@ -1,11 +1,7 @@
-import {Crud} from "../../lib/repository/memory-repo";
 import {QuestionRequest} from "../interactor/interactor-requests";
 import {Question} from "../model/survey";
+import {CrudRepository} from "./crud-repository";
 
-export interface QuestionRepository extends Crud<QuestionRequest, Question> {
-    create(question: QuestionRequest): Promise<Question>;
+export interface QuestionRepository extends CrudRepository<QuestionRequest, Question> {
 
-    update(id: number, question: Question): Promise<Question>;
-
-    findById(id: number): Promise<Question>;
 }

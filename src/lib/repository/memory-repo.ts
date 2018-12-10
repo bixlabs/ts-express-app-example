@@ -1,15 +1,10 @@
+import {CrudRepository} from "../../survey/repository/crud-repository";
+
 interface IFakeGenericData {
     [key: number]: any;
 }
 
-export interface Crud<I, T> {
-    create(data: I): Promise<T>;
-    update(id: number, data: I): Promise<T>;
-    delete(id: number): Promise<void>;
-    findById(id: number): Promise<T>;
-}
-
-export class MemoryRepo implements Crud<any, any> {
+export class MemoryRepo implements CrudRepository<any, any> {
     private idRef = 1;
     private data: IFakeGenericData = {};
 
