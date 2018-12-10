@@ -2,7 +2,14 @@ interface IFakeGenericData {
     [key: number]: any;
 }
 
-export class MemoryRepo {
+export interface Crud<I, T> {
+    create(data: I): Promise<T>;
+    update(id: number, data: I): Promise<T>;
+    delete(id: number): Promise<void>;
+    findById(id: number): Promise<T>;
+}
+
+export class MemoryRepo implements Crud<any, any> {
     private idRef = 1;
     private data: IFakeGenericData = {};
 
