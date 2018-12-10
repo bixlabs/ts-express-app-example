@@ -14,16 +14,16 @@ app.get("/", wrapper(async (req, res) => {
     res.send();
 }));
 
-app.get("/error", wrapper(async (req, res) => {
+app.get("/error", wrapper(async () => {
     throw new Error("dummy error");
 }));
 
-test("It should response correctly in async way manner", async () => {
+test("It should resolve async code successfully", async () => {
     const result = await request(app).get("/");
     expect(result.status).toEqual(200);
 });
 
-test("It should response correctly in async way manner", async () => {
+test("It should reject async code successfully", async () => {
     const result = await request(app).get("/error");
     expect(result.status).toEqual(500);
 });
