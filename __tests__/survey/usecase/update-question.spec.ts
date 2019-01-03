@@ -1,10 +1,10 @@
 import {MemoryRepo} from "../../../src/lib/repository/memory-repo";
-import {QuestionType} from "../../../src/survey/model/survey";
+import {QuestionType} from "../../../src/survey/entity/question";
 import {QuestionRepository} from "../../../src/survey/repository/question-repository";
 import {SurveyRepository} from "../../../src/survey/repository/survey-repository";
-import {AddQuestion} from "../../../src/survey/interactor/add-question";
-import {NewSurvey} from "../../../src/survey/interactor/new-survey";
-import {UpdateQuestion} from "../../../src/survey/interactor/update-question";
+import {AddQuestion} from "../../../src/survey/usecase/add-question";
+import {NewSurvey} from "../../../src/survey/usecase/new-survey";
+import {UpdateQuestion} from "../../../src/survey/usecase/update-question";
 
 let surveyRepo: SurveyRepository;
 let questionRepo: QuestionRepository;

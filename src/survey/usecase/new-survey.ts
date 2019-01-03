@@ -1,4 +1,4 @@
-import {Survey} from "../model/survey";
+import {Survey} from "../entity/survey";
 import {SurveyRepository} from "../repository/survey-repository";
 import {SurveyRequest} from "./interactor-requests";
 

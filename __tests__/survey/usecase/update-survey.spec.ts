@@ -1,6 +1,6 @@
 import {MemoryRepo} from "../../../src/lib/repository/memory-repo";
-import {SurveyRequest} from "../../../src/survey/interactor/interactor-requests";
-import {UpdateSurvey} from "../../../src/survey/interactor/update-survey";
+import {SurveyRequest} from "../../../src/survey/usecase/interactor-requests";
+import {UpdateSurvey} from "../../../src/survey/usecase/update-survey";
 
 let repo: MemoryRepo;
 

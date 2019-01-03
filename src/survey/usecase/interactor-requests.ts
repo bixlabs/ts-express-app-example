@@ -1,4 +1,4 @@
-import {QuestionType} from "../model/survey";
+import {QuestionType} from "../entity/question";
 
 export interface SurveyRequest {
     name: string;

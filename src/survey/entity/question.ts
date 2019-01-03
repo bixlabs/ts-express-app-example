@@ -1,9 +1,3 @@
-export interface Survey {
-    id: number;
-    name: string;
-    questions: Question[];
-}
-
 export enum QuestionType {
     Simple = 0,
     Text = 1,
