@@ -28,7 +28,7 @@ jobs:
 
       - run:
           name: Run test with JUnit as reporter
-          command: npx jest --ci --reporters=default --reporters=jest-junit
+          command:  npm test -- --ci --reporters=default --reporters=jest-junit
           environment:
             JEST_JUNIT_OUTPUT: "reports/junit/js-test-results.xml"
             CIRCLE_CI_FORMAT: "--format junit -o reports/junit/js-lint-results.xml"
