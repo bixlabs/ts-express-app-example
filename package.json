@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon --exec ts-node src/api/server.ts",
     "lint_fix": "npm run lint -- --fix",
-    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "lint": "tslint -c tslint.json -p tsconfig.json $CIRCLE_CI_FORMAT",
     "build": "tsc",
     "prebuild": "npm run lint",
     "test": "jest",
