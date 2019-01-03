@@ -37,7 +37,7 @@ jobs:
 
       - run:
           name: Send coverage report
-          command: cat coverage/lcov.info | coveralls
+          command: cat coverage/lcov.info | node_modules/.bin/coveralls
 
       - store_test_results:
           path: reports/junit
