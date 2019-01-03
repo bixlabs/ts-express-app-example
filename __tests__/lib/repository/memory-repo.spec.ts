@@ -1,4 +1,4 @@
-import {MemoryRepo} from "./memory-repo";
+import {MemoryRepo} from "../../../src/lib/repository/memory-repo";
 
 test("Allow create data", async () => {
     const repo = new MemoryRepo();

@@ -1,6 +1,6 @@
 import express from "express";
 import request from "supertest";
-import {wrapper} from "./express";
+import {wrapper} from "../../../src/api/lib/express";
 
 function sleep(duration: number) {
     return new Promise((resolve) => {

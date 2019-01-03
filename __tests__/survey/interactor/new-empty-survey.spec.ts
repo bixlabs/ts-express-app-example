@@ -1,5 +1,5 @@
-import {MemoryRepo} from "../../lib/repository/memory-repo";
-import {NewEmptySurvey} from "./new-empty-survey";
+import {MemoryRepo} from "../../../src/lib/repository/memory-repo";
+import {NewEmptySurvey} from "../../../src/survey/interactor/new-empty-survey";
 
 test("Allow create a empty survey by just indicating its name", async () => {
     const repo = new MemoryRepo();

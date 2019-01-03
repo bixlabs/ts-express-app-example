@@ -1,10 +1,6 @@
 module.exports = {
     clearMocks: true,
     collectCoverage: true,
-    collectCoverageFrom: [
-        "src/**/*",
-        "!src/api/*"
-    ],
     coverageDirectory: 'coverage',
     globals: {
         'ts-jest': {
